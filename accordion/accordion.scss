@@ -1,0 +1,54 @@
+.tabRight {
+    .accordion {
+        &__item {
+            margin-bottom: 30px;
+            .text {
+                font-weight: bold;
+                font-size: 20px;
+                position: relative;
+                width: 80px; // будет прыгать, ток width
+                display: block;
+                &:hover {
+                    color: #1378EF;
+                    transition: 0.2s;
+                }
+                &::after {
+                    content: '';
+                    display: block;
+                    position: absolute;
+                    width: 16px;
+                    height: 16px;
+                    top: 5px;
+                    right: -780px;
+                    background-image: url(../icons/line.svg);
+                    background-position: center;
+                    background-repeat: no-repeat;
+                }
+            }
+            .answer {
+                display: none;
+                font-size: 16px;
+                margin-top: 5px;
+            }
+            .btn {
+                width: 0;
+                height: 0;
+                position: absolute;
+                appearance: none;
+                -webkit-appearance: none;
+                &:checked~.answer {
+                    display: block;
+                }
+                &:checked~.text {
+                    color: #1378EF;
+                }
+                &:checked~.text::after {
+                    background-image: url(../icons/line.svg);
+                    background-position: center;
+                    background-repeat: no-repeat;
+                    transform: rotate(-90deg);
+                }
+            }
+        }
+    }
+}
