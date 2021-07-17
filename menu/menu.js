@@ -1,7 +1,7 @@
 function menuAdaptive(hamburger, menu, menuClose, menuLink) {
-    hamburger = document.querySelector(hamburger)
-    menu = document.querySelector(menu)
-    menuClose = document.querySelector(menuClose)
+    hamburger = document.querySelector(hamburger);
+    menu = document.querySelector(menu);
+    menuClose = document.querySelector(menuClose);
     menuLink = document.querySelectorAll(menuLink);
 
     hamburger.addEventListener('click', () => {
@@ -13,16 +13,16 @@ function menuAdaptive(hamburger, menu, menuClose, menuLink) {
         menu.classList.remove('active');
         document.body.style.overflow = '';
     });
-    
-    menuLink.forEach(item => {
-        item.querySelector("a").addEventListener('click', () => {
+
+    menuLink.forEach((item) => {
+        item.querySelector('a').addEventListener('click', () => {
             menu.classList.remove('active');
             document.body.style.overflow = '';
-    
         });
     });
 
-    document.addEventListener('keydown', (e) => { // событие keydown срабатывает при нажатии кнопок
+    document.addEventListener('keydown', (e) => {
+        // событие keydown срабатывает при нажатии кнопок
         if (e.code === 'Escape' && menu.classList.contains('active')) {
             menu.classList.remove('active');
             document.body.style.overflow = '';
@@ -30,4 +30,4 @@ function menuAdaptive(hamburger, menu, menuClose, menuLink) {
     });
 }
 
-menuAdaptive('.hamburger', '.menu', '.menu__close', '.menu__link')
+menuAdaptive('.hamburger', '.menu', '.menu__list-close', '.menu__list-items-li');
